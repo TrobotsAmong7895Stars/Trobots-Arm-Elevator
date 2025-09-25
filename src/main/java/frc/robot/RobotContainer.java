@@ -50,17 +50,19 @@ public class RobotContainer {
    * joysticks}.
    */
   private void configureBindings() {
-
+    
+    /*
     // Schedule `setAngle` when the Xbox controller's B button is pressed,
     // cancelling on release.
     m_driverController.a().whileTrue(m_exampleSubsystem.setAngle(Degrees.of(-5)));
-    m_driverController.b().whileTrue(m_exampleSubsystem.setAngle(Degrees.of(10)));
+    m_driverController.b().whileTrue(m_exampleSubsystem.setAngle(Degrees.of(90)));
     // Schedule `set` when the Xbox controller's B button is pressed,
     // cancelling on release.
-    // m_driverController.x().whileTrue(m_exampleSubsystem.set(0.3));
-    // m_driverController.y().whileTrue(m_exampleSubsystem.set(-0.3));
+    m_driverController.x().whileTrue(m_exampleSubsystem.set(0.3));
+    m_driverController.y().whileTrue(m_exampleSubsystem.set(-0.3));
+    */
     
-    /*
+    
     // Schedule `sysId` while the Xbox controller's A button is pressed,
     // cancelling on release.
     m_driverController.a().whileTrue(m_exampleSubsystem.sysId());
@@ -69,7 +71,7 @@ public class RobotContainer {
     // cancelling on release.
     m_driverController.x().whileTrue(m_exampleSubsystem.set(0.3));
     m_driverController.y().whileTrue(m_exampleSubsystem.set(-0.3));
-    */
+    
     
   }
 

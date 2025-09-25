@@ -46,7 +46,7 @@ public class ExampleSubsystem extends SubsystemBase {
   .withTelemetry("ArmMotor", TelemetryVerbosity.HIGH)
   // Gearing from the motor rotor to final shaft.
   // In this example gearbox(3,4) is the same as gearbox("3:1","4:1") which corresponds to the gearbox attached to your motor.
-  .withGearing(SmartMechanism.gearing(SmartMechanism.gearbox(80)))
+  .withGearing(SmartMechanism.gearing(SmartMechanism.gearbox(80).div(23)))
   // Motor properties to prevent over currenting.
   .withMotorInverted(false)
   .withIdleMode(MotorMode.BRAKE)
@@ -63,7 +63,7 @@ public class ExampleSubsystem extends SubsystemBase {
   private ArmConfig armCfg = new ArmConfig(sparkSmartMotorController)
   .withStartingPosition(Degrees.of(0))
   // Soft limit is applied to the SmartMotorControllers PID
-  .withSoftLimits(Degrees.of(-20), Degrees.of(10))
+  .withSoftLimits(Degrees.of(-20), Degrees.of(90))
   // Hard limit is applied to the simulation.
   .withHardLimit(Degrees.of(-30), Degrees.of(40))
   // Starting position is where your arm starts
