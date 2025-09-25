@@ -13,6 +13,7 @@ import static edu.wpi.first.units.Units.Degrees;
 
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
 
@@ -56,8 +57,8 @@ public class RobotContainer {
     m_driverController.b().whileTrue(m_exampleSubsystem.setAngle(Degrees.of(10)));
     // Schedule `set` when the Xbox controller's B button is pressed,
     // cancelling on release.
-    m_driverController.x().whileTrue(m_exampleSubsystem.set(0.3));
-    m_driverController.y().whileTrue(m_exampleSubsystem.set(-0.3));
+    // m_driverController.x().whileTrue(m_exampleSubsystem.set(0.3));
+    // m_driverController.y().whileTrue(m_exampleSubsystem.set(-0.3));
     
     /*
     // Schedule `sysId` while the Xbox controller's A button is pressed,
