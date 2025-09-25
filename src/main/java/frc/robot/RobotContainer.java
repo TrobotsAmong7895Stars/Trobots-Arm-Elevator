@@ -7,7 +7,7 @@ package frc.robot;
 import frc.robot.Constants.OperatorConstants;
 import frc.robot.commands.Autos;
 import frc.robot.commands.ExampleCommand;
-import frc.robot.subsystems.ExampleSubsystem;
+import frc.robot.subsystems.ArmSubsystem;
 
 import static edu.wpi.first.units.Units.Degrees;
 
@@ -25,7 +25,7 @@ import edu.wpi.first.wpilibj2.command.button.Trigger;
  */
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
-  private final ExampleSubsystem m_exampleSubsystem = new ExampleSubsystem();
+  private final ArmSubsystem armSubsystem = new ArmSubsystem();
 
   // Replace with CommandPS4Controller or CommandJoystick if needed
   private final CommandXboxController m_driverController =
@@ -37,7 +37,7 @@ public class RobotContainer {
     configureBindings();
 
     // Set the default command to force the arm to go to 0.
-    m_exampleSubsystem.setDefaultCommand(m_exampleSubsystem.setAngle(Degrees.of(0)));
+    armSubsystem.setDefaultCommand(armSubsystem.setAngle(Degrees.of(0)));
   }
 
   /**
@@ -51,18 +51,18 @@ public class RobotContainer {
    */
   private void configureBindings() {
     
-    /*
+    
     // Schedule `setAngle` when the Xbox controller's B button is pressed,
     // cancelling on release.
-    m_driverController.a().whileTrue(m_exampleSubsystem.setAngle(Degrees.of(-5)));
-    m_driverController.b().whileTrue(m_exampleSubsystem.setAngle(Degrees.of(90)));
+    m_driverController.a().whileTrue(armSubsystem.setAngle(Degrees.of(-5)));
+    m_driverController.b().whileTrue(armSubsystem.setAngle(Degrees.of(90)));
     // Schedule `set` when the Xbox controller's B button is pressed,
     // cancelling on release.
-    m_driverController.x().whileTrue(m_exampleSubsystem.set(0.3));
-    m_driverController.y().whileTrue(m_exampleSubsystem.set(-0.3));
-    */
+    m_driverController.x().whileTrue(armSubsystem.set(0.3));
+    m_driverController.y().whileTrue(armSubsystem.set(-0.3));
     
     
+    /* 
     // Schedule `sysId` while the Xbox controller's A button is pressed,
     // cancelling on release.
     m_driverController.a().whileTrue(m_exampleSubsystem.sysId());
@@ -71,7 +71,7 @@ public class RobotContainer {
     // cancelling on release.
     m_driverController.x().whileTrue(m_exampleSubsystem.set(0.3));
     m_driverController.y().whileTrue(m_exampleSubsystem.set(-0.3));
-    
+    */
     
   }
 
@@ -82,6 +82,6 @@ public class RobotContainer {
    */
   public Command getAutonomousCommand() {
     // An example command will be run in autonomous
-    return Autos.exampleAuto(m_exampleSubsystem);
+    return Autos.exampleAuto(armSubsystem);
   }
 }
