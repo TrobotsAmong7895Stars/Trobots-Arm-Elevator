@@ -66,6 +66,7 @@ public class RobotContainer {
     // Schedule `sysId` when the Xbox controller's A button is pressed,
     // cancelling on release.
     m_driverController.a().whileTrue(m_exampleSubsystem.sysId());
+    // Schedule Elevator to go to its designated zero
     m_driverController.b().whileTrue(m_exampleSubsystem.set(0));
     // Schedule `set` when the Xbox controller's B button is pressed,
     // cancelling on release.

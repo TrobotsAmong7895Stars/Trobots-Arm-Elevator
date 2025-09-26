@@ -41,16 +41,16 @@ public class ElevatorSubsystem extends SubsystemBase {
   // Mechanism Circumference is the distance traveled by each mechanism rotation converting rotations to meters.
   .withMechanismCircumference(Meters.of(Inches.of(2.638).in(Meters) * 22))
   // Feedback Constants (PID Constants)
-  .withClosedLoopController(0.00077147, 0, 0, MetersPerSecond.of(0.5), MetersPerSecondPerSecond.of(0.5))
+  .withClosedLoopController(0.0042004, 0, 0, MetersPerSecond.of(0.5), MetersPerSecondPerSecond.of(0.5))
   .withSimClosedLoopController(4, 0, 0, MetersPerSecond.of(0.5), MetersPerSecondPerSecond.of(0.5))
   // Feedforward Constants
-  .withFeedforward(new ElevatorFeedforward(0.26218, 0.39556, 3.7615))
-  .withSimFeedforward(new ElevatorFeedforward(0.26218, 0.39556, 3.7615))
+  .withFeedforward(new ElevatorFeedforward(0.24395, 0.42824, 11.372))
+  .withSimFeedforward(new ElevatorFeedforward(0, 0, 0))
   // Telemetry name and verbosity level
   .withTelemetry("ElevatorMotor", TelemetryVerbosity.HIGH)
   // Gearing from the motor rotor to final shaft.
   // In this example gearbox(3,4) is the same as gearbox("3:1","4:1") which corresponds to the gearbox attached to your motor.
-  .withGearing(SmartMechanism.gearing(SmartMechanism.gearbox(48)))
+  .withGearing(SmartMechanism.gearing(SmartMechanism.gearbox(48).div(3)))
   // Motor properties to prevent over currenting.
   .withMotorInverted(false)
   .withIdleMode(MotorMode.BRAKE)
@@ -76,7 +76,6 @@ public class ElevatorSubsystem extends SubsystemBase {
   private ElevatorConfig elevconfig = new ElevatorConfig(sparkSmartMotorController)
       .withStartingHeight(Meters.of(0))
       .withHardLimits(Meters.of(0), Meters.of(3))
-      .withSoftLimits(Meters.of(0), Meters.of(2.5))
       .withTelemetry("Elevator", TelemetryVerbosity.HIGH)
       .withMass(Pounds.of(16));
 
