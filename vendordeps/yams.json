@@ -1,7 +1,11 @@
 {
     "fileName": "yams.json",
     "name": "Yet Another Mechanism System",
+<<<<<<< HEAD
     "version": "2025.9.8",
+=======
+    "version": "2025.9.25",
+>>>>>>> Trobots-Arm/main
     "frcYear": "2025",
     "uuid": "a1051e86-a979-4880-a28b-a0d5362d1d96",
     "mavenUrls": [
@@ -12,7 +16,11 @@
         {
             "groupId": "yams",
             "artifactId": "YAMS-java",
+<<<<<<< HEAD
             "version": "2025.9.8"
+=======
+            "version": "2025.9.25"
+>>>>>>> Trobots-Arm/main
         }
     ],
     "cppDependencies": [],

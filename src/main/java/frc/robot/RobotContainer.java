@@ -7,12 +7,22 @@ package frc.robot;
 import frc.robot.Constants.OperatorConstants;
 import frc.robot.commands.Autos;
 import frc.robot.commands.ExampleCommand;
+<<<<<<< HEAD
 import frc.robot.subsystems.ElevatorSubsystem;
 
 import static edu.wpi.first.units.Units.Meters;
 import static edu.wpi.first.units.Units.Degrees;
 
 import edu.wpi.first.wpilibj2.command.Command;
+=======
+import frc.robot.subsystems.ArmSubsystem;
+
+import static edu.wpi.first.units.Units.Degrees;
+
+import edu.wpi.first.wpilibj.DriverStation;
+import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.Commands;
+>>>>>>> Trobots-Arm/main
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
 
@@ -24,7 +34,11 @@ import edu.wpi.first.wpilibj2.command.button.Trigger;
  */
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
+<<<<<<< HEAD
   private final ElevatorSubsystem m_exampleSubsystem = new ElevatorSubsystem();
+=======
+  private final ArmSubsystem armSubsystem = new ArmSubsystem();
+>>>>>>> Trobots-Arm/main
 
   // Replace with CommandPS4Controller or CommandJoystick if needed
   private final CommandXboxController m_driverController =
@@ -34,12 +48,18 @@ public class RobotContainer {
   public RobotContainer() {
     // Configure the trigger bindings
     configureBindings();
+<<<<<<< HEAD
   
     // Set the default command to force the elevator to go to 0.
     // m_exampleSubsystem.setDefaultCommand(m_exampleSubsystem.setHeight(Meters.of(0)));
 
       // Set the default command to force the elevator to release.
      m_exampleSubsystem.setDefaultCommand(m_exampleSubsystem.set(0));
+=======
+
+    // Set the default command to force the arm to go to 0.
+    armSubsystem.setDefaultCommand(armSubsystem.setAngle(Degrees.of(0)));
+>>>>>>> Trobots-Arm/main
   }
 
   /**
@@ -53,6 +73,7 @@ public class RobotContainer {
    */
   private void configureBindings() {
     
+<<<<<<< HEAD
     // Schedule `setHeight` when the Xbox controller's B button is pressed,
     // cancelling on release.
     m_driverController.a().whileTrue(m_exampleSubsystem.setHeight(Meters.of(0.5)));
@@ -67,13 +88,34 @@ public class RobotContainer {
     // cancelling on release.
     m_driverController.a().whileTrue(m_exampleSubsystem.sysId());
     // Schedule Elevator to go to its designated zero
+=======
+    
+    // Schedule `setAngle` when the Xbox controller's B button is pressed,
+    // cancelling on release.
+    m_driverController.a().whileTrue(armSubsystem.setAngle(Degrees.of(-5)));
+    m_driverController.b().whileTrue(armSubsystem.setAngle(Degrees.of(90)));
+    // Schedule `set` when the Xbox controller's B button is pressed,
+    // cancelling on release.
+    m_driverController.x().whileTrue(armSubsystem.set(0.3));
+    m_driverController.y().whileTrue(armSubsystem.set(-0.3));
+    
+    
+    /* 
+    // Schedule `sysId` while the Xbox controller's A button is pressed,
+    // cancelling on release.
+    m_driverController.a().whileTrue(m_exampleSubsystem.sysId());
+>>>>>>> Trobots-Arm/main
     m_driverController.b().whileTrue(m_exampleSubsystem.set(0));
     // Schedule `set` when the Xbox controller's B button is pressed,
     // cancelling on release.
     m_driverController.x().whileTrue(m_exampleSubsystem.set(0.3));
     m_driverController.y().whileTrue(m_exampleSubsystem.set(-0.3));
     */
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> Trobots-Arm/main
   }
 
   /**
@@ -83,6 +125,10 @@ public class RobotContainer {
    */
   public Command getAutonomousCommand() {
     // An example command will be run in autonomous
+<<<<<<< HEAD
     return Autos.exampleAuto(m_exampleSubsystem);
+=======
+    return Autos.exampleAuto(armSubsystem);
+>>>>>>> Trobots-Arm/main
   }
 }
