@@ -4,32 +4,20 @@
 
 package frc.robot.commands;
 
-<<<<<<< HEAD
 import frc.robot.subsystems.ElevatorSubsystem;
-=======
 import frc.robot.subsystems.ArmSubsystem;
->>>>>>> Trobots-Arm/main
 import edu.wpi.first.wpilibj2.command.Command;
 
 /** An example command that uses an example subsystem. */
 public class ExampleCommand extends Command {
-  @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
-<<<<<<< HEAD
-  private final ElevatorSubsystem m_subsystem;
-=======
   private final ArmSubsystem m_subsystem;
->>>>>>> Trobots-Arm/main
 
   /**
    * Creates a new ExampleCommand.
    *
    * @param subsystem The subsystem used by this command.
    */
-<<<<<<< HEAD
-  public ExampleCommand(ElevatorSubsystem subsystem) {
-=======
   public ExampleCommand(ArmSubsystem subsystem) {
->>>>>>> Trobots-Arm/main
     m_subsystem = subsystem;
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(subsystem);

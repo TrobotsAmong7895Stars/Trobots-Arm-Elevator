@@ -4,23 +4,14 @@
 
 package frc.robot.commands;
 
-<<<<<<< HEAD
-import frc.robot.subsystems.ElevatorSubsystem;
-=======
 import frc.robot.subsystems.ArmSubsystem;
->>>>>>> Trobots-Arm/main
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.Commands;
 
 public final class Autos {
   /** Example static factory for an autonomous command. */
-<<<<<<< HEAD
-  public static Command exampleAuto(ElevatorSubsystem subsystem) {
-    return null;
-=======
   public static Command exampleAuto(ArmSubsystem subsystem) {
-    return Commands.sequence(subsystem.exampleMethodCommand(), new ExampleCommand(subsystem));
->>>>>>> Trobots-Arm/main
+    return null;
   }
 
   private Autos() {
